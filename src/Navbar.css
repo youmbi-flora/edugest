@@ -1,0 +1,129 @@
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  background: var(--blanc);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+  animation: descendre 0.8s ease;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+  color: var(--bleu);
+  font-size: 1.4rem;
+}
+
+.liens {
+  display: flex;
+  gap: 8px;
+}
+
+.liens a {
+  display:flex;
+  align-items:center;
+  gap:8px;  
+  text-decoration: none;
+  color: var(--texte);
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.liens a:hover {
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  transform: translateY(-2px);
+}
+
+.liens a.active {
+  background: var(--bleu);
+  color: var(--blanc);
+}
+
+.burger {
+  display: none;
+  background: var(--bleu);
+  color: var(--blanc);
+  border: none;
+  font-size: 1.3rem;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes descendre {
+  from { transform: translateY(-60px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glisser {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Téléphone et petite tablette */
+@media (max-width: 800px) {
+  .burger {
+    display: block;
+  }
+
+  .liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--blanc);
+    padding: 15px;
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.15);
+  }
+
+  .liens.ouvert {
+    display: flex;
+    animation: glisser 0.3s ease;
+  }
+
+  .liens a {
+    justify-content:center;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

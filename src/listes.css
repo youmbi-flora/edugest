@@ -1,0 +1,246 @@
+
+.outils {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.barre-recherche {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--fond);
+  border: 2px solid var(--bleu-clair);
+  border-radius: 30px;
+  padding: 10px 18px;
+  color: #64748b;
+  transition: 0.3s;
+}
+
+.barre-recherche:focus-within {
+  border-color: var(--bleu);
+  background: var(--blanc);
+}
+
+.barre-recherche input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.btn-rafraichir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-rafraichir:hover {
+  background: var(--bleu);
+  color: var(--blanc);
+}
+
+/* Bouton "Tout supprimer" : rouge franc */
+.btn-tout-supprimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: var(--blanc);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(220, 38, 38, 0.3);
+  transition: 0.3s;
+}
+
+.btn-tout-supprimer:hover {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.45);
+}
+
+.btn-tout-supprimer:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
+}
+
+.erreur {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  animation: apparition 0.4s ease;
+}
+
+.vide {
+  text-align: center;
+  color: #64748b;
+  padding: 30px 10px;
+}
+
+.aide {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: -10px 0 15px;
+}
+
+.note {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.note.bonne {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.note.faible {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.statut {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.statut.publiee {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.statut.brouillon {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+/* Photo et documents des étudiants */
+.cellule-nom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.photo-mini {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.photo-mini.lettre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: bold;
+}
+
+.docs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.doc-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.doc-lien:hover {
+  background: var(--bleu);
+  color: var(--blanc);
+}
+
+/* Tablette */
+@media (max-width: 900px) {
+  .tableau th,
+  .tableau td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .note,
+  .statut {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+}
+
+/* Téléphone */
+@media (max-width: 700px) {
+  .outils {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .barre-recherche {
+    flex: none;
+    width: 100%;
+  }
+
+  .btn-rafraichir,
+  .btn-tout-supprimer {
+    width: 100%;
+  }
+
+  .erreur {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+
+  .vide {
+    padding: 20px 5px;
+    font-size: 0.9rem;
+  }
+
+  .note,
+  .statut {
+    font-size: 0.85rem;
+  }
+}
+
+/* Très petit écran */
+@media (max-width: 360px) {
+  .barre-recherche {
+    padding: 8px 14px;
+  }
+
+  .btn-rafraichir,
+  .btn-tout-supprimer {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}

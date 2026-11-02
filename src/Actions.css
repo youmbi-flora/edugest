@@ -1,0 +1,218 @@
+
+/* ----- Boutons d'action dans les listes ----- */
+.actions-ligne {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-modifier,
+.btn-restaurer {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-modifier:hover,
+.btn-restaurer:hover {
+  background: var(--bleu);
+  color: var(--blanc);
+  transform: scale(1.1);
+}
+
+.btn-restaurer {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-restaurer:hover {
+  background: #16a34a;
+  color: var(--blanc);
+}
+
+/* Bouton "Ajouter" */
+.btn-ajouter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--bleu), var(--bleu-fonce));
+  color: var(--blanc);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+  transition: 0.3s;
+}
+
+.btn-ajouter:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.45);
+}
+
+/* ----- Fenêtre de modification ----- */
+.modal-fond {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+  animation: apparition 0.25s ease;
+}
+
+.modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  background: var(--blanc);
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--bleu-fonce);
+  font-size: 1.2rem;
+}
+
+.modal-sous-titre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 6px;
+  padding-top: 18px;
+  border-top: 1px solid var(--bleu-clair);
+  color: var(--bleu-fonce);
+  font-size: 1.05rem;
+}
+
+.modal .aide {
+  margin: 0 0 14px;
+}
+
+.modal .erreur {
+  margin: 15px 0 0;
+}
+
+.modal-boutons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.modal-boutons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-annuler-modal {
+  background: var(--bleu-clair);
+  color: var(--bleu);
+}
+
+.btn-valider-modal {
+  background: linear-gradient(135deg, var(--bleu), var(--bleu-fonce));
+  color: var(--blanc);
+}
+
+.modal-boutons button:hover {
+  transform: translateY(-2px);
+}
+
+.modal-nom {
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+/* Le document déjà enregistré, affiché sous le champ */
+.doc-actuel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.doc-actuel .photo-mini {
+  width: 44px;
+  height: 44px;
+}
+
+/* ----- Corbeille ----- */
+.info-corbeille {
+  padding: 16px 20px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  border-radius: 20px;
+  font-size: 0.92rem;
+}
+
+.date-suppression {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.delai {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.delai.urgent {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ----- Le menu un peu plus compact sur les écrans moyens ----- */
+@media (max-width: 1400px) and (min-width: 801px) {
+  .liens {
+    gap: 4px;
+  }
+
+  .liens a {
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal {
+    padding: 22px 18px;
+  }
+
+  .modal-boutons {
+    flex-direction: column-reverse;
+  }
+
+  .modal-boutons button {
+    justify-content: center;
+  }
+}

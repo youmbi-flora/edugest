@@ -1,0 +1,115 @@
+
+.contenu-connexion {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--bleu-clair), #bfdbfe);
+}
+
+.carte-connexion {
+  width: 100%;
+  max-width: 400px;
+  background: var(--blanc);
+  padding: 35px 30px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+  text-align: center;
+  animation: apparition 0.7s ease;
+}
+
+.logo-connexion {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bleu), var(--bleu-fonce));
+  color: var(--blanc);
+  border-radius: 50%;
+  font-size: 2rem;
+  animation: flotter 4s ease-in-out infinite;
+}
+
+.carte-connexion h1 {
+  color: var(--bleu-fonce);
+}
+
+.sous-titre {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 6px 0 20px;
+}
+
+.carte-connexion .erreur {
+  text-align: left;
+  font-size: 0.9rem;
+  padding: 12px 15px;
+}
+
+.champ-connexion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--fond);
+  border: 2px solid var(--bleu-clair);
+  border-radius: 30px;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  color: #64748b;
+  transition: 0.3s;
+}
+
+.champ-connexion:focus-within {
+  border-color: var(--bleu);
+  background: var(--blanc);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.champ-connexion input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.oeil {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.btn-connexion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--bleu), var(--bleu-fonce));
+  color: var(--blanc);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-connexion:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn-connexion:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}

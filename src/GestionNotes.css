@@ -1,0 +1,148 @@
+
+.zone-tableau {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableau {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.tableau th {
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  text-align: left;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.tableau th:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.tableau th:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.tableau td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bleu-clair);
+}
+
+.tableau tbody tr {
+  transition: 0.3s;
+}
+
+.tableau tbody tr:hover {
+  background: var(--fond);
+}
+
+.tableau input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--bleu-clair);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: var(--fond);
+  outline: none;
+  transition: 0.3s;
+}
+
+.tableau input:focus {
+  border-color: var(--bleu);
+  background: var(--blanc);
+}
+
+.tableau input.petit {
+  width: 70px;
+  text-align: center;
+}
+
+.btn-supprimer {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-supprimer:hover {
+  background: #dc2626;
+  color: var(--blanc);
+  transform: scale(1.1);
+}
+
+.boutons.multi {
+  flex-wrap: wrap;
+}
+
+.boutons.multi button {
+  flex: 1 1 auto;
+}
+
+.page-notes .section{
+    margin-bottom: 25px;
+}
+
+.page-notes .boutons{
+    margin-top: 5px;
+}
+
+
+
+
+
+
+@media (max-width: 700px) {
+  .tableau {
+    min-width: 0;
+  }
+
+  .tableau thead {
+    display: none;
+  }
+
+  .tableau,
+  .tableau tbody,
+  .tableau tr {
+    display: block;
+    width: 100%;
+  }
+
+  .tableau tr {
+    background: var(--fond);
+    border-radius: 18px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .tableau td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 4px;
+    border-bottom: none;
+  }
+
+  .tableau td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--bleu-fonce);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .tableau input {
+    width: 60%;
+  }
+
+  .tableau input.petit {
+    width: 80px;
+  }
+}

@@ -1,0 +1,128 @@
+
+/* Le bloc "mon compte" dans la navbar : c'est maintenant un lien */
+.liens a.compte {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  border-radius: 30px;
+  margin-left: 6px;
+}
+
+.liens a.compte:hover,
+.liens a.compte.active {
+  background: var(--bleu);
+  color: var(--blanc);
+  transform: none;
+}
+
+.compte-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bleu);
+  color: var(--blanc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liens a.compte:hover .compte-avatar,
+.liens a.compte.active .compte-avatar {
+  background: var(--blanc);
+  color: var(--bleu);
+}
+
+.compte-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.compte-info strong {
+  font-size: 0.85rem;
+}
+
+.compte-info small {
+  font-size: 0.72rem;
+  color: #475569;
+}
+
+.liens a.compte:hover small,
+.liens a.compte.active small {
+  color: var(--bleu-clair);
+}
+
+.btn-deconnexion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-deconnexion:hover {
+  background: #dc2626;
+  color: var(--blanc);
+}
+
+/* Page "Accès refusé" */
+.acces-refuse {
+  max-width: 460px;
+  margin: 40px auto;
+  background: var(--blanc);
+  padding: 35px 25px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+  animation: apparition 0.6s ease;
+}
+
+.acces-refuse svg {
+  font-size: 3rem;
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+.acces-refuse h2 {
+  color: var(--bleu-fonce);
+  margin-bottom: 8px;
+}
+
+.acces-refuse p {
+  color: #64748b;
+}
+
+@media (max-width: 1100px) {
+  .compte-info {
+    display: none;
+  }
+
+  .liens a.compte {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .liens a.compte {
+    justify-content: center;
+    margin-left: 0;
+    padding: 8px;
+  }
+
+  .compte-info {
+    display: flex;
+  }
+
+  .btn-deconnexion {
+    justify-content: center;
+  }
+}

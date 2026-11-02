@@ -1,0 +1,36 @@
+
+.contenu{
+    flex: 1;
+    padding:30px;
+    padding-top: 110px;
+    padding-bottom: 90px;
+    animation: apparition 0.6s ease;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:var(--bleu-fonce);
+    color: var(--blanc);
+    text-align: center;
+    padding:12px;
+    font-size: 0.9rem;
+    z-index: 50;
+    animation:apparition 1s ease;
+
+}
+
+@keyframes  apparition{
+    from {opacity:0; transform: translateY(20px);}
+    to{ opacity:1; transform:translateY(0);}
+}
+
+@media(max-width: 700px){
+    .contenu{
+        padding:15px;
+        padding-top: 90px;
+        padding-bottom: 70px;
+    }
+}

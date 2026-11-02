@@ -1,0 +1,626 @@
+
+/* ===== Dashboard EduGest : bleu et blanc ===== */
+.dashboard {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ----- Barre du haut ----- */
+.db-haut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  animation: apparition 0.6s ease;
+}
+
+.db-titre h1 {
+  font-size: 1.6rem;
+  color: var(--bleu-fonce);
+}
+
+.db-titre p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.db-outils {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.db-cloche {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blanc);
+  color: var(--bleu);
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+}
+
+.db-cloche.sonne svg {
+  transform-origin: top center;
+  animation: sonner 2.5s ease-in-out infinite;
+}
+
+.db-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ef4444;
+  color: var(--blanc);
+  font-size: 0.72rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.db-profil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 16px 5px 5px;
+  background: var(--blanc);
+  color: var(--texte);
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+  transition: 0.3s;
+}
+
+.db-profil:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.2);
+}
+
+.db-avatar {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: bold;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
+.db-erreur {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 15px 20px;
+  border-radius: 15px;
+}
+
+/* ----- Accueil + date ----- */
+.db-accueil {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+.db-bienvenue {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 35px;
+  background: linear-gradient(135deg, var(--bleu), var(--bleu-fonce));
+  color: var(--blanc);
+  border-radius: 30px;
+  animation: apparition 0.7s ease;
+}
+
+.db-bienvenue h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 1.7rem;
+}
+
+.db-bienvenue p {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  max-width: 460px;
+  opacity: 0.9;
+}
+
+.db-bienvenue::before,
+.db-bienvenue::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.db-bienvenue::before {
+  right: -50px;
+  top: -50px;
+  width: 200px;
+  height: 200px;
+  animation: flotter 6s ease-in-out infinite;
+}
+
+.db-bienvenue::after {
+  right: 110px;
+  bottom: -60px;
+  width: 130px;
+  height: 130px;
+  animation: flotter 8s ease-in-out infinite;
+}
+
+.db-bouton {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--blanc);
+  color: var(--bleu);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.db-bouton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.db-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--blanc);
+  color: var(--bleu-fonce);
+  text-transform: capitalize;
+  border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+  animation: apparition 0.9s ease;
+}
+
+.db-date strong {
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--bleu);
+}
+
+/* ----- Les 4 chiffres ----- */
+.db-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: var(--blanc);
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+  animation: apparition 1s ease;
+}
+
+.db-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.db-stat-icone {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  font-size: 1.3rem;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.db-stat:hover .db-stat-icone {
+  background: var(--bleu);
+  color: var(--blanc);
+  transform: scale(1.1);
+}
+
+.db-stat strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--bleu-fonce);
+}
+
+.db-stat small {
+  color: #64748b;
+}
+
+/* ----- Les cartes ----- */
+.db-milieu {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+.db-bas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.db-carte {
+  min-width: 0;
+  padding: 25px;
+  background: var(--blanc);
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+  animation: apparition 1.1s ease;
+}
+
+.db-carte h3 {
+  margin-bottom: 18px;
+  color: var(--bleu-fonce);
+  font-size: 1.05rem;
+}
+
+.db-vide {
+  padding: 25px 10px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ----- Courbe ----- */
+.db-courbe {
+  width: 100%;
+  height: auto;
+}
+
+.db-trait {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dessiner 2s ease forwards;
+}
+
+.db-zone {
+  animation: apparition 2s ease;
+}
+
+.db-point {
+  fill: var(--blanc);
+  stroke: var(--bleu);
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop 0.5s ease backwards;
+}
+
+.db-mois {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.db-mois strong {
+  display: block;
+  color: var(--bleu-fonce);
+}
+
+.db-mois span {
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+/* ----- Anneau ----- */
+.db-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.db-anneau {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  animation: tourner 1.2s ease;
+}
+
+.db-anneau-centre {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blanc);
+  color: var(--bleu);
+  font-size: 1.9rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.db-legende {
+  margin-top: 15px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* ----- Étudiants par classe ----- */
+.db-classe {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.db-classe-nom {
+  width: 80px;
+  flex-shrink: 0;
+  color: var(--texte);
+  font-size: 0.9rem;
+}
+
+.db-piste {
+  flex: 1;
+  height: 12px;
+  background: var(--bleu-clair);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.db-remplissage {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bleu), #60a5fa);
+  border-radius: 10px;
+  animation: remplir 1.2s ease backwards;
+}
+
+.db-classe strong {
+  width: 28px;
+  text-align: right;
+  color: var(--bleu-fonce);
+}
+
+/* ----- Dernières inscriptions ----- */
+.db-ligne {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--bleu-clair);
+}
+
+.db-ligne:last-child {
+  border-bottom: none;
+}
+
+.db-photo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.db-lettre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.db-ligne-texte {
+  flex: 1;
+  min-width: 0;
+}
+
+.db-ligne-texte strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.db-ligne small {
+  color: #64748b;
+}
+
+.db-ligne-date {
+  flex-shrink: 0;
+}
+
+/* ----- À faire ----- */
+.db-tache {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--bleu-clair);
+}
+
+.db-tache:last-child {
+  border-bottom: none;
+}
+
+.db-tache svg {
+  flex-shrink: 0;
+  color: #f59e0b;
+  font-size: 1.3rem;
+}
+
+.db-tache.fait svg {
+  color: #16a34a;
+}
+
+/* ----- Actions rapides ----- */
+.db-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.db-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 10px;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.db-action svg {
+  font-size: 1.5rem;
+}
+
+.db-action:hover {
+  background: var(--bleu);
+  color: var(--blanc);
+  transform: translateY(-5px);
+}
+
+/* ----- Animations (utilisées aussi par la page de connexion) ----- */
+@keyframes dessiner {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flotter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes tourner {
+  from {
+    transform: rotate(-120deg) scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sonner {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0);
+  }
+  70% {
+    transform: rotate(14deg);
+  }
+  80% {
+    transform: rotate(-12deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes remplir {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ----- Tablette et téléphone ----- */
+@media (max-width: 900px) {
+  .db-accueil,
+  .db-milieu,
+  .db-bas {
+    grid-template-columns: 1fr;
+  }
+
+  .db-date {
+    padding: 28px;
+  }
+
+  .db-profil-nom {
+    display: none;
+  }
+
+  .db-profil {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .db-titre h1 {
+    font-size: 1.3rem;
+  }
+
+  .db-bienvenue {
+    padding: 28px 22px;
+  }
+
+  .db-bienvenue h2 {
+    font-size: 1.4rem;
+  }
+
+  .db-carte {
+    padding: 20px 16px;
+  }
+
+  .db-classe-nom {
+    width: 62px;
+  }
+}
+
+/* Pour les personnes qui préfèrent moins d'animations */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard *,
+  .dashboard *::before,
+  .dashboard *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .db-trait {
+    stroke-dashoffset: 0;
+  }
+}
